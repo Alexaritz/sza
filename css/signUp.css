@@ -68,7 +68,26 @@ text-align: center;
     outline: none;
     margin: 0;
 }
+.button {
+   width: 240px;
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  text-shadow: 0 -1px #1d7464, 0 1px #7bb8b3;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  background: #4eb2a8;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  text-decoration: none;
+  text-align: center;
+}
 
+.button:hover {
+  text-decoration: none;
+}
 .login form input[type=text] {
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
@@ -86,7 +105,7 @@ text-align: center;
 
 .login form .enviar {
     width: 240px;
-    height: 12px;
+    height: 20px;
     display: block;
     padding-top: 14px;
     padding-bottom: 14px;

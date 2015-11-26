@@ -108,8 +108,9 @@ img {
 }
 
 .button {
-	position: relative;
-    right: 0px;
+	float: right;
+	/*position: relative;
+    left: 1650px;*/
     width: 240px;
     height: 12px;
     display: block;

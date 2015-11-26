@@ -41,6 +41,22 @@ text-align: center;
     border-top-left-radius: 6px;
     font-family: Arial;
 }
+.button {
+   width: 240px;
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  text-shadow: 0 -1px #1d7464, 0 1px #7bb8b3;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  background: #4eb2a8;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  text-decoration: none;
+  text-align: center;
+}
 
 .login form {
     width: 240px;

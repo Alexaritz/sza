@@ -12,19 +12,15 @@ function irudiAldatu() {
     var num = Math.floor( Math.random() * imgAr.length );
     var img = imgAr[num];
 	var path='images/'
-    var imgStr = '<img src="' + path + img + '" alt = "">';
+    var imgStr = '<img src="' + path + img + '" alt = ""/>';
 	document.getElementById("targetImage").src = path + img;
 }
 setInterval(irudiAldatu,4000);
 </script>
 </head>
 <body onload="getRandomImage()">
-
 <a href="login.html" class="button">Saioa Hasi</a>
 <a href="signUp.html" class="button" >Erregistratu</a>
-<img src="images/bb.jpg" id="targetImage" >
-    <!-- This script segment displays an image from the array -->
-    <!-- <script type="text/javascript">getRandomImage()</script>-->
-</div>
+<img src="images/bb.jpg" id="targetImage" alt="Serieak"/>
 </body>
 </html>
