@@ -3,7 +3,7 @@
 <head>
 	<link rel="stylesheet" href="css/index.css"/>
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-	<script type="text/javascript">
+	<script type="text/javascript">/*
 // place your images in this array
 var random_images_array = ['bb.jpg', 'wd.jpg', 'got.jpg', 'mr.jpg'];
 var targetImage = document.getElementById("targetImage"); 
@@ -15,16 +15,20 @@ function irudiAldatu() {
     var imgStr = '<img src="' + path + img + '" alt = ""/>';
 	document.getElementById("targetImage").src = path + img;
 }
-setInterval(irudiAldatu,4000);
+setInterval(irudiAldatu,4000);*/
 </script>
 </head>
-<body onload="getRandomImage()">
-<input type="button" class="button" value="Saioa Hasi" onclick="location.href = 'login.html';" />
-<br/>
-<br/>
+<body <!--onload="getRandomImage()"-->>
+<div id="crossfade">
+  <img src="images/bb.jpg" alt="Image 1">
+  <img src="images/wd.jpg" alt="Image 2">
+  <img src="images/got.jpg" alt="Image 3">
+  <img src="images/mr.jpg" alt="Image 4">
+  </div>
+<input type="button" class="button" value="Saioa Hasi" onclick="location.href = 'login.html';"   style="top: 0;" />
 <br/>
 <input type="button" class="button" value="Erregistratu" onclick="location.href = 'signUp.html';" />
 <br/>
-<img src="images/bb.jpg" id="targetImage" alt="Serieak"/>
+<!--<img src="images/bb.jpg" id="targetImage" alt="Serieak"/>-->
 </body>
 </html>
