@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="css/index.css"/>
 <?php
 // Start the session
 session_start();
@@ -18,13 +19,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$erab = $mysqli->query( "SELECT * FROM erabiltzaile WHERE Username=('$Username') and Password=('$Pasahitza')" );
 		$num_rows=mysqli_num_rows($erab);
 		if ($num_rows> 0){
-			echo "<p>Datuak zuzenak dira.</p>";
-			$_SESSION['username'] = $Username;
-			mysqli_close($mysqli);
-				header('Location: serie.html');
+			if($Username=='admin' && $Pasahitza=='admin'){
+				echo "<p>Datuak zuzenak dira.</p>";
+				$_SESSION['username'] = $Username;
+				mysqli_close($mysqli);
+				header('Location: insert.html');
+			}else{
+				echo "<p>Datuak zuzenak dira.</p>";
+				$_SESSION['username'] = $Username;
+				mysqli_close($mysqli);
+				header('Location: home.html');
+			}
 		}else{
-			echo "<p>EEEE A MI NO ME TIMAS</p>";
-			echo"<p><a href='layout.html'>Hasiera orria</a></p>   ";
+			echo '<div align="center">';
+			echo '<p align="center">Kontu hori ez dago datu basean.</p>';
+			echo'<p align="center"><a href="index.html" title="Atzera">Atzera</a></p>';
+		    echo '</div>';
+			
+			echo'<img  id="imagen_centrada" src="images/sad.gif" alt="Sad"/>';
 		}
 }else{
 	echo 'Sartu datuak eta sakatu Bidali';

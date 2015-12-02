@@ -4,39 +4,102 @@
 	<link rel="stylesheet" href="css/signUp.css"/>
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 	<script type="text/javascript" >
-	XMLHttpRequestObject = new XMLHttpRequest();
-	function galderaTxertatu2(){
-	var galdera=document.getElementById("galdera").value;
-	var answ=document.getElementById("answ").value;
-	var zail=document.getElementById("zail").value;
-	var param= "galdera="+galdera+"&answ="+answ+"&zail="+zail;
 	
-	XMLHttpRequestObject.open("POST","sartuGaldera.php", true);
-	XMLHttpRequestObject.onreadystatechange = function(){
-	if ((XMLHttpRequestObject.readyState==4)&&(XMLHttpRequestObject.status==200 )){ 
-		document.getElementById('hint').innerHTML=XMLHttpRequestObject.responseText;
-	}}
-	XMLHttpRequestObject.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	XMLHttpRequestObject.send(param);
+function hutsaEz() {
+	var name=document.getElementById("izena").value;
+	var username=document.getElementById("username").value;
+	var surname=document.getElementById("surnames").value;
+	var email=document.getElementById("email").value;
+	var pass=document.getElementById("pass").value;
+	var pass2=document.getElementById("pass2").value;
+	if(username=='Username'){
+		alert('Erabiltzaile izena ezin da hutsik utzi.');
+		return false;
 	}
-	
-	
-	function balidatu(){	
-	return true;	
+	if(name=='Name'){
+		alert('Izena ezin da hutsik utzi.');
+		return false;
 	}
+	if(surname=='Surnames'){
+		alert('Abizenak ezin dira hutsik utzi.');
+		return false;
+	}
+	if(email=='Email'){
+		alert('Eposta ezin da hutsik utzi.');
+		return false;
+	}
+	if(pass=='Password'){
+		alert('Pasahitza ezin da hutsik utzi.');
+		return false;
+	}
+	if(pass2=='Password'){
+		alert('Bigarren pasahitza ezin da hutsik utzi.');
+		return false;
+	}
+	return true;
+}
+	
+function pasahitzaKonprobatu(){
+	var pass=document.getElementById("pass").value;
+	var pass2=document.getElementById("pass2").value;
+	if(pass==pass2){
+		return true;
+	}else{
+		alert('Pasahitzak ezberdinak dira.');
+		return false;
+	}
+}
+	// E-posta helbidearen formatua zuzena bada true itzultzen du eta false bestela.	
+function helbide_formatua(){	
+	var helbidea=document.getElementById("email").value;
+	// Ziurtatu '@' karakterea behin, eta behin bakarrik, agertzen dela.
+	if(helbidea.split("@").length != 2){
+		alert('@ karaketerea behin jarri behar da.');
+		return false;
+	}
+	// Ziurtatu '@' karakterea ez dela lehena.
+	if(helbidea.indexOf("@") == 0){
+		alert('@ karakterea ezin da lehenengoa izan.');
+		return false;
+	}
+	// Ziurtatu '@' karakterearen ondoren '.' karaktereren bat badagoela.
+	if(helbidea.lastIndexOf(".") < helbidea.lastIndexOf("@")){
+		alert ('@ karakterearen ondoren puntu bat jarri behar da.');
+		return false;
+	}
+	// Ziurtatu azkeneko puntuaren atzetik gutxienez beste 2 karaktere daudela.
+	if(helbidea.lastIndexOf(".") + 2 > helbidea.length - 1){
+		alert('Azkeneko puntuaren atzetik gutxienez beste 2 karaktere jarri behar dira.');
+		return false;
+	}
+	return true;
+}	
+	function balidatu(){
+		if( hutsaEz() && helbide_formatua() && pasahitzaKonprobatu() ){	
+			return true;		
+		}
+		else return false;
+	}
+
 	</script>
 </head>
 <body>
+<div id="crossfade">
+  <img src="images/bb.jpg" alt="Image 1">
+  <img src="images/wd.jpg" alt="Image 2">
+  <img src="images/got.jpg" alt="Image 3">
+  <img src="images/mr.jpg" alt="Image 4">
+  </div>
 <section class="login">
 	<div class="titulo">Erregistratu</div>
-	<form id="myform" action="signUp.php" method="post" onsubmit="balidatu()"  enctype="application/x-www-form-urlencoded">
+	<form id="myform" action="signUp.php" method="post" onsubmit="return balidatu();" >
 		<input type="text" name="username"id="username" title="Erabiltzaile izena beharrezkoa" value="Username" onfocus="if(this.value == 'Username') {this.value=''}" onblur="if(this.value == ''){this.value ='Username'}"/>
 		<input type="text" name="izena" id="izena" title="Izena" value="Name" onfocus="if(this.value == 'Name') {this.value=''}" onblur="if(this.value == ''){this.value ='Name'}"/>
 		<input type="text" name="surnames" id="surnames" title="Abizenak" value="Surnames" onfocus="if(this.value == 'Surnames') {this.value=''}" onblur="if(this.value == ''){this.value ='Surnames'}"/>
 		<input type="text" name="email" id="email" title="Email" value="Email" onfocus="if(this.value == 'Email') {this.value=''}" onblur="if(this.value == ''){this.value ='Email'}"/>
         <input type="password" name="pass" id="pass" title="Pasahitza beharrezkoa" value="Password" onfocus="if(this.value == 'Password') {this.value=''}" onblur="if(this.value == ''){this.value ='Password'}"/>
-		<input type="password" id="pass2" title="Pasahitza beharrezkoa" value="Password2" onfocus="if(this.value == 'Password2') {this.value=''}" onblur="if(this.value == ''){this.value ='Password2'}"/>
-		<input type="submit" class="button" value="Bidali" /> 		 
+		<input type="password" id="pass2" title="Pasahitza beharrezkoa" value="Password" onfocus="if(this.value == 'Password') {this.value=''}" onblur="if(this.value == ''){this.value ='Password'}"/>
+		<input  name='submit' type="submit" class="button" value="Bidali" /> 		 
 		<div class="olvido" align="center">
         	 <div align="center" class="col" >
 				<a href="index.html" title="Hasiera">Hasiera</a>

@@ -1,0 +1,4 @@
+<!ELEMENT serieak (seriea)*>
+<!ELEMENT seriea (izenburua, link)>
+<!ELEMENT izenburua (#PCDATA)>
+<!ELEMENT link (#PCDATA)>

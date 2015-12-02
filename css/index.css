@@ -7,6 +7,32 @@ website: http://www.dhenriquez.cl
 body {
     background-color: #1e1e1e;
 }
+a{
+	position: absolute;
+	
+	/*width: 298px;
+   height: 14px;*/
+ /*  padding-top: 13px;
+   padding-bottom: 13px;*/
+   font-size: 14px;
+   text-align: center;
+   color: #bfbfbf;
+   font-weight: bold;
+  /* border: #2d2d2d solid 0px;
+   margin-bottom: 30px;
+   border-top-right-radius: 6px;
+   border-top-left-radius: 6px;*/
+   font-family: Arial;
+}
+#imagen_centrada {
+    position:    absolute;
+    top:         50%;
+    left:        50%;
+    width:        640px;
+    height:       480px;
+    margin-left: -320px;
+    margin-top:  -240px;
+}
 img {
     max-width: 100%;
     height: auto;
@@ -14,6 +40,35 @@ img {
 	margin-left: auto;
     margin-right: auto;
 	display: block;
+	    
+
+}
+
+img .sad {
+	vertical-align: center;
+    /*max-width: 100%;*/
+    height: auto;
+    width: auto;
+	margin-left: auto;
+    margin-right: auto;
+	display: block;
+	vertical-align:middle;
+	
+}
+p{
+width: 298px;
+   height: 14px;
+   padding-top: 13px;
+   padding-bottom: 13px;
+   font-size: 14px;
+   text-align: center;
+   color: #bfbfbf;
+   font-weight: bold;
+   border: #2d2d2d solid 0px;
+   margin-bottom: 30px;
+   border-top-right-radius: 6px;
+   border-top-left-radius: 6px;
+   font-family: Arial;
 }
 
 .login {

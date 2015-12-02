@@ -6,17 +6,24 @@
 		<script type="text/javascript" src="js"></script>
 </head>
 <body>
+<div id="crossfade">
+  <img src="images/bb.jpg" alt="Image 1">
+  <img src="images/wd.jpg" alt="Image 2">
+  <img src="images/got.jpg" alt="Image 3">
+  <img src="images/mr.jpg" alt="Image 4">
+  </div>
 <section class="login">
 	<div class="titulo">Saioa Hasi</div>
 	<form action="login.php" method="post" onsubmit="return true;" enctype="application/x-www-form-urlencoded">
     	<input type="text" id="username" name="username" title="Erabiltzaile izena beharrezkoa" value="Username" onfocus="if(this.value == 'Username') {this.value=''}" onblur="if(this.value == ''){this.value ='Username'}" />
         <input type="password" id="pass" name="pass" title="Pasahitza beharrezkoa" value="Password" onfocus="if(this.value == 'Password') {this.value=''}" onblur="if(this.value == ''){this.value ='Password'}" />
-	   <div class="olvido" align="center">
+	    <button name='submit' class="button"	type='submit' value='submit'>Bidali</button>
+		<div class="olvido" align="center">
         	 <div align="center" class="col" >
-				<a href="signUp.html" title="Erregistratu">Erregistratu</a>
+				<a href="index.html" title="Hasiera">Hasiera</a>
 			 </div> 
         </div>
-		 <button name='submit' class="button"	type='submit' value='submit'>Bidali</button>
+		
     </form>
 </section>
 </body>

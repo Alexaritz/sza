@@ -16,13 +16,16 @@ $Surnames= $_POST['surnames'];
 $Email= $_POST['email'];
 $Pass= $_POST['pass'];
 //}
+if (isset($_POST['submit'])){
 $txertatu="INSERT INTO Erabiltzaile(Username, Name, Surnames, Email, Password) VALUES ('$Username','$Name','$Surnames','$Email', '$Pass')"; 
 if (!$mysqli -> query($txertatu)){
 	die("<p>Errorea gertatu da: ".$mysqli -> error ."</p>");	
 }else{
 	$_Session['email']=$Email;	
 	echo 'Erabiltzailea zuzen sartu da';
-	header("Location: serie.html");
+	header("Location: home.html");
 	die();
+}}else{
+	echo 'Sakatu bidali botoia.';
 }	
 ?>
