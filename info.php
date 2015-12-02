@@ -59,7 +59,11 @@ echo "<br/>";
 echo '<iframe width="420" height="315" src="$url"></iframe>';
 echo "<br/>";
 echo "<p>$labur</p>";echo "<p>$url</p>";
+echo "<br/>";
+echo "<br/>";
+echo '<a href="home.html" title="Hasiera">Atzera</a>';
 echo '  </div>';
+
 ?>
 
 </body>
