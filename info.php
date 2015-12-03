@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict/EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<link rel="stylesheet" href="css/home.css">
@@ -53,17 +53,25 @@ if (strlen($word)>0) {
 
 //output the response
 echo $response;*/
-echo '<div align="center">';
+echo '<div align="center" >';
 echo "<p>$izenb</p>";
 echo "<br/>";
-echo '<iframe width="420" height="315" src="$url"></iframe>';
-echo "<br/>";
-echo "<p>$labur</p>";echo "<p>$url</p>";
-echo "<br/>";
-echo "<br/>";
-echo '<a href="home.html" title="Hasiera">Atzera</a>';
-echo '  </div>';
+echo '<iframe width="420" height="315" src="'.$url.'"></iframe>';
+echo '<iframe width="420" height="315" src="https://www.youtube.com/watch?v=IGQmdoK_ZfY"></iframe>';
+echo '<iframe width="420" height="315" src="http://www.youtube.com/v/Ahg6qcgoay4"></iframe>';
 
+echo '<br/>';
+echo '</div>';echo '<br/>';
+echo '<div >';
+
+echo '<p align="justify">'.$labur.'</p>';
+echo "<p>$url</p>";
+echo'<br/>';
+echo'<br/>';
+echo '</div>';
+echo '<div align="center" >';
+echo'<p><a style="font-size:15px" href="home.html" title="Atzera">Atzera</a></p>';
+echo '</div>';
 ?>
 
 </body>

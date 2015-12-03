@@ -33,9 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		}else{
 			echo '<div align="center">';
 			echo '<p align="center">Kontu hori ez dago datu basean.</p>';
-			echo'<p align="center"><a href="index.html" title="Atzera">Atzera</a></p>';
-		    echo '</div>';
-			
+			echo'<p align="center"><a href="login.html" title="Atzera">Atzera</a></p>';
 			echo'<img  id="imagen_centrada" src="images/sad.gif" alt="Sad"/>';
 		}
 }else{

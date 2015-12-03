@@ -1,4 +1,8 @@
+<!DOCTYPE serieak
+[
 <!ELEMENT serieak (seriea)*>
-<!ELEMENT seriea (izenburua, link)>
+<!ELEMENT seriea (izenburua, link,laburpena)>
 <!ELEMENT izenburua (#PCDATA)>
 <!ELEMENT link (#PCDATA)>
+<!ELEMENT laburpena (#PCDATA)>
+]>

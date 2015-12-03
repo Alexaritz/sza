@@ -16,14 +16,12 @@ if (strlen($word)>0) {
       //find a link matching the search text
       if (stristr($y->item(0)->childNodes->item(0)->nodeValue,$word)) {
         if ($hint=="") {
-          $hint="<a href='" . 
-          $z->item(0)->childNodes->item(0)->nodeValue . 
-          "' target='_blank'>" . 
-          $y->item(0)->childNodes->item(0)->nodeValue . "</a>";
+          $hint="<a href='info.php?id=" . $y->item(0)->childNodes->item(0)->nodeValue .
+          "' >" . $y->item(0)->childNodes->item(0)->nodeValue . 
+          "</a>";
         } else {
-          $hint=$hint . "<br /><a href='" . 
-          $z->item(0)->childNodes->item(0)->nodeValue . 
-          "' target='_blank'>" . 
+          $hint=$hint . "<br /><a href='info.php?id=" . $y->item(0)->childNodes->item(0)->nodeValue .
+          "' >" . 
           $y->item(0)->childNodes->item(0)->nodeValue . "</a>";
         }
       }

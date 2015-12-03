@@ -34,7 +34,7 @@ a{
     font-family: Arial;
 	color: #bfbfbf;
 }
-div{
+div.letra{
     height: 14px;
     padding-top: 13px;
     padding-bottom: 13px;
@@ -45,6 +45,8 @@ div{
     font-family: Arial;
 	color: #bfbfbf;
 }
+
+
 p{
 	display: inline;
 	width: 298px;
@@ -78,11 +80,11 @@ p{
 
 
 div.img {
-    margin: 10%;
+    /*margin: 10%;*/
     padding: 5px;
    /* border: 1px solid #0000ff;*/
-   height: auto;
-    width: auto;
+   /*height: auto;
+    width: auto;*/
     float: left;
     text-align: center;
 }	
@@ -93,9 +95,9 @@ div.img img {
    /* border: 1px solid #ffffff;*/
 }
 
-div.img a:hover img {
+/*div.img a:hover img {
     border: 1px solid #4eb2a8;
-}
+}*/
 
 div.desc {
   text-align: center;
@@ -157,6 +159,21 @@ div.desc {
   padding-top: 14px;
   padding-bottom: 14px;
   text-decoration: none;
+  text-align: center;
+}
+.button2 {
+   width: 240px;
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  text-shadow: 0 -1px #1d7464, 0 1px #7bb8b3;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  background: #4eb2a8;
+  padding-top: 14px;
+  padding-bottom: 14px;
   text-align: center;
 }
 /*

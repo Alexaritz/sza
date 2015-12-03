@@ -4,11 +4,7 @@
 	<link rel="stylesheet" href="css/home.css">
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 	<script>
-		function showResult(str) {
-		  if (str.length==0) { 
-			document.getElementById("livesearch").innerHTML="";
-			return;
-		  }
+		/*function bidali() {
 		  if (window.XMLHttpRequest) {
 			// code for IE7+, Firefox, Chrome, Opera, Safari
 			xhr=new XMLHttpRequest();
@@ -22,18 +18,23 @@
 		  }
 		  xhr.open("GET","livesearch.php?word="+str,true);
 		  xhr.send();
+		}*/
+		function balidatu(){
+			return true;
 		}
 </script>
 </head>
 <body>
 	<div align="center">
-		<form>
-			<p>Sartu serie izena:</p><input type="text" size="30" name="izena">
+		<form name="serie" id="serie" action="insert.php" method="post" >
+			<p>Sartu serie izena:</p><input type="text" size="30" name="izena" id="izena"/>
 			<br/>
-			<p>Sartu seriearen trailerra:</p><input type="text" size="30" name="trailler">
+			<p>Sartu seriearen trailerra:</p><input type="text" size="30" name="trailer" id="trailer"/>
 			<br/>
 			<p>Sartu seriearen sinopsia:</p><br/>
-			<textarea rows="4" cols="50" name="sinopsis"> </textarea>
+			<textarea style="width:400px" rows="20" cols="500" name="sinopsis" id="sinopsis"> </textarea>
+			<br/>
+		<input type="submit" class="button2" value="Gorde" name="submit"  />
 		</form>
 		
 		

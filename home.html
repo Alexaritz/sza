@@ -7,6 +7,7 @@
 		function showResult(str) {
 		  if (str.length==0) { 
 			document.getElementById("livesearch").innerHTML="";
+			document.getElementById("livesearch").style.border="1px";
 			return;
 		  }
 		  if (window.XMLHttpRequest) {
@@ -18,6 +19,14 @@
 		  xhr.onreadystatechange=function() {
 			if (xhr.readyState==4 && xhr.status==200) {
 			  document.getElementById("livesearch").innerHTML=xhr.responseText;
+			  document.getElementById("livesearch").style.border="1px solid #141414";
+			   document.getElementById("livesearch").style.background="#141414";
+			  //  document.getElementById("livesearch").style.float="right";
+				document.getElementById("livesearch").style.width="225px";
+
+				document.getElementById("livesearch").style.position="absolute";
+				document.getElementById("livesearch").style.left="47.5%";
+			//	document.getElementById("livesearch").style.right="50%";
 			}
 		  }
 		  xhr.open("GET","livesearch.php?word="+str,true);
@@ -26,31 +35,55 @@
 </script>
 </head>
 <body>
-	<div align="center">
+	<div align="center" class="letra">
 		<form>
 			<p>Sartu serie izena:</p><input type="text" size="30" onkeyup="showResult(this.value)">
 			<div id="livesearch"></div>
 		</form>	
-		<a href="logOut.php" class="button">Saioa itxi</a>	
+	<input type="button" class="button" value="Saioa itxi" onclick="location.href = 'logOut.php';" />	
 	</div>
 	
 
-	<div align="center">
+	<div align="center" class="letra">
 	<div class="img">
-	 <a href="info.php?id=Breaking Bad"><img src="images/bb.jpg" alt="Klematis" width="220" height="180"></a>
+	 <a  href="info.php?id=Breaking Bad"><img src="images/bb.jpg" alt="Klematis" width="220" height="180"></a>
 	 <div class="desc">Breaking Bad</div>
 	</div>
 	<div class="img">
-	 <a href="info.php?id=The Walking Dead"><img src="images/wd.jpg" alt="Klematis" width="220" height="180"></a>
+	 <a  href="info.php?id=The Walking Dead"><img src="images/wd.jpg" alt="Klematis" width="220" height="180"></a>
 	 <div class="desc">The Walking Dead</div>
 	</div>
 	<div class="img">
-	 <a href="info.php?id=Game of Thrones"><img src="images/got.jpg" alt="Klematis" width="220" height="180"></a>
+	 <a  href="info.php?id=Game of Thrones"><img src="images/got.jpg" alt="Klematis" width="220" height="180"></a>
 	 <div class="desc">Game of Thrones</div>
 	</div>
 	<div class="img">
 	 <a href="info.php?id=Mr Robot"><img src="images/mr.jpg" alt="Klematis" width="220" height="180"></a>
 	 <div class="desc">Mr Robot</div>
+	</div>
+	<div class="img">
+	 <a href="info.php?id=Prison Break"><img src="images/pb.png" alt="Klematis" width="220" height="180"></a>
+	 <div class="desc">Prison Break</div>
+	</div>
+	<div class="img">
+	 <a href="info.php?id=The Sopranos"><img src="images/ts.jpg" alt="Klematis" width="220" height="180"></a>
+	 <div class="desc">The Sopranos</div>
+	</div>
+	<div class="img">
+	 <a href="info.php?id=Sons of Anarchy"><img src="images/soa.jpg" alt="Klematis" width="220" height="180"></a>
+	 <div class="desc">Sons of Anarchy</div>
+	</div>
+	<div class="img">
+	 <a href="info.php?id=House"><img src="images/house.jpg" alt="Klematis" width="220" height="180"></a>
+	 <div class="desc">House</div>
+	</div>
+	<div class="img">
+	 <a href="info.php?id=The Wire"><img src="images/tw.jpg" alt="Klematis" width="220" height="180"></a>
+	 <div class="desc">The Wire</div>
+	</div>
+	<div class="img">
+	 <a href="info.php?id=Arrow"><img src="images/arrow.png" alt="Klematis" width="220" height="180"></a>
+	 <div class="desc">Arrow</div>
 	</div>
 		</div>
 </body>
