@@ -7,7 +7,16 @@ $x=$xmlDoc->getElementsByTagName('seriea');
 
 
 //lookup all links from the xml file if length of word>0
-echo '<h>DATU BASEKO SERIEAK</h>';
+//echo '<h class="title">DATU BASEKO SERIEAK</h>';	
+
+
+
+echo ' <div align= "center" class="CSSTableGenerator" >
+		<table border="1">
+			<tr align="center">
+				<td>SERIEAK</td>
+			</tr>
+			<tr>';
   for($i=0; $i<($x->length); $i++) {
     $y=$x->item($i)->getElementsByTagName('izenburua');
     $z=$x->item($i)->getElementsByTagName('link');
@@ -15,10 +24,17 @@ echo '<h>DATU BASEKO SERIEAK</h>';
       //find a link matching the search text
 	  echo "<div  align='center'>";
 	  $l=$i+1;
-		echo '<p>'.$l. ". ".$y->item(0)->childNodes->item(0)->nodeValue.'</p>';
+				echo'<tr><td><p>'.$l. ". ".$y->item(0)->childNodes->item(0)->nodeValue.'</p></td></tr>';
+		
+		
+		//echo '<p>".$l. ". ".$y->item(0)->childNodes->item(0)->nodeValue."</p>';
 		 echo "</div>";
     }
-  }
-
+  }echo'</tr>
+		</table>
+		</div>';
+   echo "<div  align='center'>";
+  	echo'<p><a href="admin.html" title="Atzera">Atzera</a></p>';
+ echo "</div>";
 
 ?>

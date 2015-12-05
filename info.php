@@ -1,11 +1,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict/EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<link rel="stylesheet" href="css/home.css">
-	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-</head>
-<body>
 <?php
+session_start();
+$Username= $_SESSION['username'];
+$servidor = "mysql.hostinger.es";//localhost mysql.hostinger.es
+$usuario = "u266570359_sza";//root u266570359_sza
+$password = "alexadri";//
+$sdb = "u266570359_sza";
+//$mysqli =new mysqli ($servidor,$usuario,$password, $sdb);
+$mysqli =new mysqli ("localhost","root","", $sdb);
+if ($mysqli->connect_error) {
+    printf("Connection failed: " . $mysqli->connect_error);
+} 
 $xmlDoc=new DOMDocument();
 $xmlDoc->load("serieak.xml");
 
@@ -32,36 +39,21 @@ if (strlen($word)>0) {
 		  $izenb=$y->item(0)->childNodes->item(0)->nodeValue;
 		  $url=$z->item(0)->childNodes->item(0)->nodeValue;
 		  $labur=$l->item(0)->childNodes->item(0)->nodeValue;
-        } /*else {//listan elementu bat baño gehiok azaldu behar baue
-          $hint=$hint . "<br /><a href='" . 
-          $z->item(0)->childNodes->item(0)->nodeValue . 
-          "' target='_blank'>" . 
-          $y->item(0)->childNodes->item(0)->nodeValue . "</a>";
-        }*/
+        }
       }
     }
   }
 }
 
-// Set output to "no suggestion" if no hint was found
-// or to the correct values
-/*if ($hint=="") {
-  $response="Ez dago izen hori duen serierik.";
-} else {
-  $response=$hint;
-}
 
-//output the response
-echo $response;*/
 echo '<div align="center" >';
-echo "<p>$izenb</p>";
+echo '<p id="izenb">'.$izenb.'</p>';
 echo "<br/>";
-echo '<iframe width="420" height="315" src="'.$url.'"></iframe>';
-echo '<iframe width="420" height="315" src="https://www.youtube.com/watch?v=IGQmdoK_ZfY"></iframe>';
-echo '<iframe width="420" height="315" src="http://www.youtube.com/v/Ahg6qcgoay4"></iframe>';
+echo '<iframe width="420" height="315" frameborder="0" src="'.$url.'"></iframe>';
 
 echo '<br/>';
-echo '</div>';echo '<br/>';
+echo '</div>';
+echo '<br/>';
 echo '<div >';
 
 echo '<p align="justify">'.$labur.'</p>';
@@ -70,9 +62,48 @@ echo'<br/>';
 echo'<br/>';
 echo '</div>';
 echo '<div align="center" >';
+
+echo '<div align="center" >';
+
+$erab = $mysqli->query( "SELECT * FROM serierabiltzaile WHERE Username=('$Username') and serie=('$izenb')" );
+$num_rows=mysqli_num_rows($erab);
+if ($num_rows> 0){
+	echo'</label></td><td><input type="checkbox" name="checkboxG6" id="checkboxG6" class="css-checkbox"  onclick="gehitu()" checked/><label for="checkboxG6" class="css-label">';
+}else{
+	echo'</label></td><td><input type="checkbox" name="checkboxG6" id="checkboxG6" class="css-checkbox"  onclick="gehitu()"/><label for="checkboxG6" class="css-label">';
+}
+echo'<br/>';
+echo '</div>';
+echo'<br/>';
+echo'<br/>';
 echo'<p><a style="font-size:15px" href="home.html" title="Atzera">Atzera</a></p>';
 echo '</div>';
 ?>
+	<link rel="stylesheet" href="css/home.css">
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<script>	 
+		function gehitu(){
+			if (window.XMLHttpRequest) {
+			// code for IE7+, Firefox, Chrome, Opera, Safari
+			xhr=new XMLHttpRequest();
+		  } else {  // code for IE6, IE5
+			xhr=new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+			var serie = "<?php echo $izenb; ?>" ;
+		  	var param= "serie="+serie;
+	
+	xhr.open("POST","like.php", true);
+	xhr.onreadystatechange=function() {
+			if (xhr.readyState==4 && xhr.status==200) {
+			  document.getElementById("livesearch").innerHTML=xhr.responseText;
+			}}
+	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhr.send(param);
+	}
+</script>
+</head>
+<body>
 
+<div id="livesearch">xcz</div>
 </body>
 </html>

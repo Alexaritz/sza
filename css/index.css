@@ -24,6 +24,21 @@ a{
    border-top-left-radius: 6px;*/
    font-family: Arial;
 }
+h.title{
+	width: 298px;
+   height: 14px;
+   padding-top: 13px;
+   padding-bottom: 13px;
+   font-size: 20px;
+   text-align: center;
+   color: #bfbfbf;
+   font-weight: bold;
+   border: #2d2d2d solid 0px;
+   margin-bottom: 30px;
+   border-top-right-radius: 6px;
+   border-top-left-radius: 6px;
+   font-family: Arial;
+}
 #imagen_centrada {
     position:    float;
     top:         50%;
@@ -204,6 +219,24 @@ width: 298px;
   text-align: center;
 }
 
+.button2 {
+	
+	display: inline;
+   width: 240px;
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  text-shadow: 0 -1px #1d7464, 0 1px #7bb8b3;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  background: #4eb2a8;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  text-decoration: none;
+  text-align: center;
+}
 .login .olvido {
     width: 240px;
     height: auto;
@@ -326,7 +359,107 @@ width: 298px;
     25% { opacity: 0 }
     100% { opacity: 0 }
 }
+.CSSTableGenerator {
+	margin: 0 auto;
+	padding:0px;
+	width:20%;
+	border:1px solid #000000;
+	
+	-moz-border-radius-bottomleft:6px;
+	-webkit-border-bottom-left-radius:6px;
+	border-bottom-left-radius:6px;
+	
+	-moz-border-radius-bottomright:6px;
+	-webkit-border-bottom-right-radius:6px;
+	border-bottom-right-radius:6px;
+	
+	-moz-border-radius-topright:6px;
+	-webkit-border-top-right-radius:6px;
+	border-top-right-radius:6px;
+	
+	-moz-border-radius-topleft:6px;
+	-webkit-border-top-left-radius:6px;
+	border-top-left-radius:6px;
+}.CSSTableGenerator table{
+    border-collapse: collapse;
+        border-spacing: 0;
+	width:100%;
+	height:100%;
+	margin:0px;padding:0px;
+}.CSSTableGenerator tr:last-child td:last-child {
+	-moz-border-radius-bottomright:12px;
+	-webkit-border-bottom-right-radius:12px;
+	border-bottom-right-radius:12px;
+}
+.CSSTableGenerator table tr:first-child td:first-child {
+	-moz-border-radius-topleft:12px;
+	-webkit-border-top-left-radius:12px;
+	border-top-left-radius:12px;
+}
+.CSSTableGenerator table tr:first-child td:last-child {
+	-moz-border-radius-topright:12px;
+	-webkit-border-top-right-radius:12px;
+	border-top-right-radius:12px;
+}.CSSTableGenerator tr:last-child td:first-child{
+	-moz-border-radius-bottomleft:12px;
+	-webkit-border-bottom-left-radius:12px;
+	border-bottom-left-radius:12px;
+}/*.CSSTableGenerator tr:hover td{
+	background-color:#3a827a;
+		
 
+}*/
+.CSSTableGenerator td{
+	vertical-align:middle;
+	
+	background-color:#349e92;
+
+	border:1px solid #000000;
+	border-width:0px 1px 1px 0px;
+	text-align:center;
+	padding:5px;
+	font-size:20px;
+	font-family:Arial;
+	font-weight:normal;
+	color:#ffffff;
+}.CSSTableGenerator tr:last-child td{
+	border-width:0px 1px 0px 0px;
+}.CSSTableGenerator tr td:last-child{
+	border-width:0px 0px 1px 0px;
+}.CSSTableGenerator tr:last-child td:last-child{
+	border-width:0px 0px 0px 0px;
+}
+.CSSTableGenerator tr:first-child td{
+	background:-o-linear-gradient(bottom, #4eb2a8 5%, #3a827a 100%);	
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4eb2a8), color-stop(1, #3a827a) );
+	background:-moz-linear-gradient( center top, #4eb2a8 5%, #3a827a 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#4eb2a8", endColorstr="#3a827a");	
+	background: -o-linear-gradient(top,#4eb2a8,3a827a);
+
+	background-color:#349e92;
+	border:0px solid #000000;
+	text-align:center;
+	border-width:0px 0px 1px 1px;
+	font-size:25px;
+	font-family:Arial;
+	font-weight:bold;
+	color:#ffffff;
+}
+.CSSTableGenerator tr:first-child:hover td{
+	background:-o-linear-gradient(bottom, #4eb2a8 5%, #3a827a 100%);	
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4eb2a8), color-stop(1, #3a827a) );
+	background:-moz-linear-gradient( center top, #4eb2a8 5%, #3a827a 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#4eb2a8", endColorstr="#3a827a");	
+	background: -o-linear-gradient(top,#4eb2a8,#3a827a);
+
+	background-color:#4eb2a8;
+}
+.CSSTableGenerator tr:first-child td:first-child{
+	border-width:0px 0px 1px 0px;
+}
+.CSSTableGenerator tr:first-child td:last-child{
+	border-width:0px 0px 1px 1px;
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
