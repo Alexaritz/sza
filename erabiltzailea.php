@@ -1,7 +1,7 @@
 <?php
 $BL_FILE='erabiltzaileak.xml';		// Erabiltzaileak gordeko diren fitxategia.
 
-function gorde_erabiltzailea($username, $name, $ $surnames, $email, $password)
+function gorde_erabiltzailea($username, $name, $surnames, $email, $password)
 {
 	global $BL_FILE;	// Funtzio baten barrutik aldagai global erabiltzeko 'global' erabili behar da.
 	
