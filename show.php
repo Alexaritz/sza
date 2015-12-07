@@ -24,10 +24,10 @@ echo ' <div align= "center" class="CSSTableGenerator" >
       //find a link matching the search text
 	  echo "<div  align='center'>";
 	  $l=$i+1;
-				echo'<tr><td><p>'.$l. ". ".$y->item(0)->childNodes->item(0)->nodeValue.'</p></td></tr>';
-		
-		
-		//echo '<p>".$l. ". ".$y->item(0)->childNodes->item(0)->nodeValue."</p>';
+		echo'<tr><td><p>'.$l. ". "."<a href='info.php?id=" . $y->item(0)->childNodes->item(0)->nodeValue .
+          "' >" . $y->item(0)->childNodes->item(0)->nodeValue . 
+          "</a>".'</p></td></tr>';
+
 		 echo "</div>";
     }
   }echo'</tr>

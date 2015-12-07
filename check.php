@@ -10,10 +10,9 @@ if ($mysqli->connect_error) {
     printf("Connection failed: " . $mysqli->connect_error);
 } 
 $Username = $_GET["username"];			
-
-		$erab = $mysqli->query( "SELECT * FROM erabiltzaile WHERE Username=('$Username')");
-		$num_rows=mysqli_num_rows($erab);
-		if ($num_rows> 0){
-		echo "Erabiltzaile hori dagoeneko existizen da.";
-		}
+$erab = $mysqli->query( "SELECT * FROM erabiltzaile WHERE Username=('$Username')");
+$num_rows=mysqli_num_rows($erab);
+if ($num_rows> 0){
+	echo "Erabiltzaile hori dagoeneko existizen da.";
+}
 ?>

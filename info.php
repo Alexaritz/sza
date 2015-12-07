@@ -57,25 +57,27 @@ echo '<br/>';
 echo '<div >';
 
 echo '<p align="justify">'.$labur.'</p>';
-echo "<p>$url</p>";
 echo'<br/>';
 echo'<br/>';
 echo '</div>';
 echo '<div align="center" >';
 
 echo '<div align="center" >';
-
+if ($Username!="admin"){
 $erab = $mysqli->query( "SELECT * FROM serierabiltzaile WHERE Username=('$Username') and serie=('$izenb')" );
 $num_rows=mysqli_num_rows($erab);
 if ($num_rows> 0){
 	echo'</label></td><td><input type="checkbox" name="checkboxG6" id="checkboxG6" class="css-checkbox"  onclick="gehitu()" checked/><label for="checkboxG6" class="css-label">';
 }else{
 	echo'</label></td><td><input type="checkbox" name="checkboxG6" id="checkboxG6" class="css-checkbox"  onclick="gehitu()"/><label for="checkboxG6" class="css-label">';
-}
+}}
 echo'<br/>';
 echo '</div>';
 echo'<br/>';
 echo'<br/>';
+if($Username=="admin")
+	echo'<p><a style="font-size:15px" href="show.php" title="Atzera">Atzera</a></p>';
+else
 echo'<p><a style="font-size:15px" href="home.html" title="Atzera">Atzera</a></p>';
 echo '</div>';
 ?>
@@ -104,6 +106,6 @@ echo '</div>';
 </head>
 <body>
 
-<div id="livesearch">xcz</div>
+<div id="livesearch"></div>
 </body>
 </html>

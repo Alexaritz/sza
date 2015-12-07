@@ -11,7 +11,7 @@ if (strlen($word)>0) {
   $hint="";
   for($i=0; $i<($x->length); $i++) {
     $y=$x->item($i)->getElementsByTagName('izenburua');
-    //$z=$x->item($i)->getElementsByTagName('link');
+    $z=$x->item($i)->getElementsByTagName('link');
     if ($y->item(0)->nodeType==1) {
       //find a link matching the search text
       if (stristr($y->item(0)->childNodes->item(0)->nodeValue,$word)) {

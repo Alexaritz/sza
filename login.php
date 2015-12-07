@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				echo "<p>Datuak zuzenak dira.</p>";
 				$_SESSION['username'] = $Username;
 				mysqli_close($mysqli);
-				header('Location: home.html');
+				header('Location: bezero.html');
 			}
 		}else{
 			echo '<div align="center">';

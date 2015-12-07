@@ -19,15 +19,11 @@ if ($num_rows> 0){
 	$ezabatu="Delete from serierabiltzaile WHERE username=('$Username') and serie=('$Serie')"; 
 	if (!$mysqli -> query($ezabatu)){
 		die("<p>Errorea gertatu da: ".$mysqli -> error ."</p>");	
-	}else{	
-		echo 'Seriea zuzen ezabatu da';
 	}
 }else{
 	$txertatu="INSERT INTO serierabiltzaile(Username, serie) VALUES ('$Username','$Serie')"; 
 	if (!$mysqli -> query($txertatu)){
 		die("<p>Errorea gertatu da: ".$mysqli -> error ."</p>");	
-	}else{	
-		echo 'Seriea zuzen sartu da';
-}
+	}
 }
 ?>
