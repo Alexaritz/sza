@@ -4,7 +4,7 @@
         <title>Seria gehitu</title>
 	<link rel="stylesheet" href="css/home.css"/>
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-	<script>
+	<script type="text/javascript">
 		/*function bidali() {
 		  if (window.XMLHttpRequest) {
 			// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -26,24 +26,26 @@
 </script>
 </head>
 <body>
-	<div align="center">
-		<form name="serie" id="serie" action="insert.php" method="post" >
-			<p>Sartu serie izena:</p><input type="text" size="30" name="izena" id="izena"/>
-			<br />
-			<p>Sartu seriearen trailerra:</p><input type="text" size="30" name="trailer" id="trailer"/>
-			<br />
-			<p>Sartu seriearen sinopsia:</p><br/>
+	<div style="text-align:center;">
+		<form id="serie" action="insert.php" method="post" ><!--name="serie"--> 
+		<div>
+			<p>Sartu serie izena:<input type="text" size="30" name="izena" id="izena"/></p>
+			<br/>
+			<p>Sartu seriearen trailerra:<input type="text" size="30" name="trailer" id="trailer"/></p>
+			<br/>
+			<p>Sartu seriearen sinopsia:</p>
+			<br/>
 			<textarea style="width:400px" rows="20" cols="500" name="sinopsis" id="sinopsis"> </textarea>
-			<br />
+			<br/>
 		<input type="submit" class="button2" value="Gorde" name="submit"  />
-		<br />
-		<br />
+		<br/>
+		<br/>
 		<p ><a style="font-size:14px"  href="admin.html" title="Atzera">Atzera</a></p>
-
+</div>
 		</form>
 		
 		
-		<a href="logOut.php" class="button">Saioa itxi</a>
+		<input type="button" class="button" value="Saioa itxi" onclick="location.href = 'logOut.php';" />	
 	</div>
 </body>
 </html>

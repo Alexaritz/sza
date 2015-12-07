@@ -33,7 +33,7 @@ background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_1437560032a
 -khtml-user-select: none;
 -moz-user-select: none;
 -ms-user-select: none;
-user-select: none;
+/*user-select: none;*/
 }
 
 

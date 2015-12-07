@@ -13,19 +13,20 @@
   <img src="images/got.jpg" alt="Image 3"/>
   <img src="images/mr.jpg" alt="Image 4"/>
   </div>
-<section class="login">
+<div class="login">
 	<div class="titulo">Saioa Hasi</div>
 	<form action="login.php" method="post" onsubmit="return true;" enctype="application/x-www-form-urlencoded">
+		<div>
     	<input type="text" id="username" name="username" title="Erabiltzaile izena" value="Username" onfocus="if(this.value == 'Username') {this.value=''}" onblur="if(this.value == ''){this.value ='Username'}" />
         <input type="password" id="pass" name="pass" title="Pasahitza" value="Password" onfocus="if(this.value == 'Password') {this.value=''}" onblur="if(this.value == ''){this.value ='Password'}" />
 	    <button name='submit' class="button"	type='submit' value='submit'>Bidali</button>
-		<div class="olvido" align="center">
-        	 <div align="center" class="col" >
+		<div class="olvido" style="text-align:center;">
+        	 <div  class="col" >
 				<a href="index.html" title="Hasiera">Hasiera</a>
 			 </div> 
         </div>
-		
+		</div>
     </form>
-</section>
+</div>
 </body>
 </html>

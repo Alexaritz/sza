@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-        <title>Erregistratu</title>
+    <title>Erregistratu</title>
 	<link rel="stylesheet" href="css/signUp.css"/>
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 	<script type="text/javascript" >
@@ -81,7 +81,29 @@ function helbide_formatua(){
 		}
 		else return false;
 	}
-
+function erabKonprobatu(){
+		  if (window.XMLHttpRequest) {
+			// code for IE7+, Firefox, Chrome, Opera, Safari
+			xhr=new XMLHttpRequest();
+		  } else {  // code for IE6, IE5
+			xhr=new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+		  xhr.onreadystatechange=function() {
+			if (xhr.readyState==4 && xhr.status==200) {
+				if(xhr.responseText=="Erabiltzaile hori dagoeneko existizen da."){
+					document.getElementById("submit").disabled = true;
+					document.getElementById("submit").style.backgroundColor = "#585858"
+					alert(xhr.responseText);
+				}else{
+					document.getElementById("submit").disabled = false;
+					document.getElementById("submit").style.backgroundColor = "#4eb2a8"
+				}
+			}
+		  }
+		  var username=document.getElementById("username").value;
+		  xhr.open("GET","check.php?username="+username,true);
+		  xhr.send();
+}
 	</script>
 </head>
 <body>
@@ -91,22 +113,23 @@ function helbide_formatua(){
   <img src="images/got.jpg" alt="Image 3"/>
   <img src="images/mr.jpg" alt="Image 4"/>
   </div>
-<section class="login">
+<div class="login">
 	<div class="titulo">Erregistratu</div>
 	<form id="myform" action="signUp.php" method="post" onsubmit="return balidatu();" >
-		<input type="text" name="username"id="username" title="Erabiltzaile izena" value="Username" onfocus="if(this.value == 'Username') {this.value=''}" onblur="if(this.value == ''){this.value ='Username'}"/>
+	<div>
+		<input type="text" name="username" id="username" title="Erabiltzaile izena" value="Username" onfocus="if(this.value == 'Username') {this.value=''}" onblur="if(this.value == ''){this.value ='Username'} erabKonprobatu()"/>
 		<input type="text" name="izena" id="izena" title="Izena" value="Name" onfocus="if(this.value == 'Name') {this.value=''}" onblur="if(this.value == ''){this.value ='Name'}"/>
 		<input type="text" name="surnames" id="surnames" title="Abizenak" value="Surnames" onfocus="if(this.value == 'Surnames') {this.value=''}" onblur="if(this.value == ''){this.value ='Surnames'}"/>
 		<input type="text" name="email" id="email" title="Email" value="Email" onfocus="if(this.value == 'Email') {this.value=''}" onblur="if(this.value == ''){this.value ='Email'}"/>
         <input type="password" name="pass" id="pass" title="Pasahitza" value="Password" onfocus="if(this.value == 'Password') {this.value=''}" onblur="if(this.value == ''){this.value ='Password'}"/>
 		<input type="password" id="pass2" title="Pasahitza" value="Password" onfocus="if(this.value == 'Password') {this.value=''}" onblur="if(this.value == ''){this.value ='Password'}"/>
-		<input  name='submit' type="submit" class="button" value="Bidali" /> 		 
-		<div class="olvido" align="center">
-        	 <div align="center" class="col" >
+		<input  name='submit' id="submit" type="submit" class="button" value="Bidali" /> 		 
+		<div class="olvido" style="text-align:center;">
+        	 <div style="text-align:center;" class="col" >
 				<a href="index.html" title="Hasiera">Hasiera</a>
 			 </div> 
-        </div>
+        </div></div>
     </form>
-</section>
+</div>
 </body>
 </html>

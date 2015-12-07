@@ -1,16 +1,11 @@
-<link rel="stylesheet" href="css/index.css"/>
 <?php
+echo '<link rel="stylesheet" href="css/index.css"/>';
+session_start();
+$_SESSION['from']="show";
 $xmlDoc=new DOMDocument();
 $xmlDoc->load("serieak.xml");
 
 $x=$xmlDoc->getElementsByTagName('seriea');
-
-
-//lookup all links from the xml file if length of word>0
-//echo '<h class="title">DATU BASEKO SERIEAK</h>';	
-
-
-
 echo ' <div align= "center" class="CSSTableGenerator" >
 		<table border="1">
 			<tr align="center">
@@ -21,7 +16,6 @@ echo ' <div align= "center" class="CSSTableGenerator" >
     $y=$x->item($i)->getElementsByTagName('izenburua');
     $z=$x->item($i)->getElementsByTagName('link');
     if ($y->item(0)->nodeType==1) {
-      //find a link matching the search text
 	  echo "<div  align='center'>";
 	  $l=$i+1;
 		echo'<tr><td><p>'.$l. ". "."<a href='info.php?id=" . $y->item(0)->childNodes->item(0)->nodeValue .

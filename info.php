@@ -4,6 +4,7 @@
 <?php
 session_start();
 $Username= $_SESSION['username'];
+$From=$_SESSION['from'];
 $servidor = "mysql.hostinger.es";//localhost mysql.hostinger.es
 $usuario = "u266570359_sza";//root u266570359_sza
 $password = "alexadri";//
@@ -20,7 +21,6 @@ $x=$xmlDoc->getElementsByTagName('seriea');
 
 $word=$_GET["id"];
 
-//lookup all links from the xml file if length of word>0
 if (strlen($word)>0) {
   $hint="";
   for($i=0; $i<($x->length); $i++) {
@@ -28,7 +28,6 @@ if (strlen($word)>0) {
     $z=$x->item($i)->getElementsByTagName('link');
 	$l=$x->item($i)->getElementsByTagName('laburpena');
     if ($y->item(0)->nodeType==1) {
-      //find a link matching the search text
       if (stristr($y->item(0)->childNodes->item(0)->nodeValue,$word)) {
         if ($hint=="") { //listan hasiera baldin bada
           $hint="<a href='" . 
@@ -63,22 +62,25 @@ echo '</div>';
 echo '<div align="center" >';
 
 echo '<div align="center" >';
-if ($Username!="admin"){
+if($Username!="admin")	{
 $erab = $mysqli->query( "SELECT * FROM serierabiltzaile WHERE Username=('$Username') and serie=('$izenb')" );
 $num_rows=mysqli_num_rows($erab);
 if ($num_rows> 0){
 	echo'</label></td><td><input type="checkbox" name="checkboxG6" id="checkboxG6" class="css-checkbox"  onclick="gehitu()" checked/><label for="checkboxG6" class="css-label">';
 }else{
 	echo'</label></td><td><input type="checkbox" name="checkboxG6" id="checkboxG6" class="css-checkbox"  onclick="gehitu()"/><label for="checkboxG6" class="css-label">';
-}}
+}
+}
 echo'<br/>';
 echo '</div>';
 echo'<br/>';
 echo'<br/>';
-if($Username=="admin")
+if ($From=="favs")
+	echo'<p><a style="font-size:15px" href="favs.php" title="Atzera">Atzera</a></p>';
+else if($From=="home")
+	echo'<p><a style="font-size:15px" href="home.php" title="Atzera">Atzera</a></p>';
+else if($From=="show")
 	echo'<p><a style="font-size:15px" href="show.php" title="Atzera">Atzera</a></p>';
-else
-echo'<p><a style="font-size:15px" href="home.html" title="Atzera">Atzera</a></p>';
 echo '</div>';
 ?>
 	<link rel="stylesheet" href="css/home.css">

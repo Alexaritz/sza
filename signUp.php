@@ -23,7 +23,7 @@ if (!$mysqli -> query($txertatu)){
 }else{
 	$_Session['email']=$Email;	
 	echo 'Erabiltzailea zuzen sartu da';
-	header("Location: home.html");
+	header("Location: bezero.html");
 	die();
 }}else{
 	echo 'Sakatu bidali botoia.';
